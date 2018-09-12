@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
