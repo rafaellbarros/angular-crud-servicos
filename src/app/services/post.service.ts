@@ -14,4 +14,8 @@ export class PostService {
   query(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
+
+  save(data: any): Observable<any> {
+    return this.http.post(this.baseUrl, data);
+  }
 }
