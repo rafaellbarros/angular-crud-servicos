@@ -1,6 +1,8 @@
 <div class="row">
   <h3>Listagem de posts</h3>
-  <app-button color="primary" routerLink="/posts/create">Criar</app-button>  
+  <app-button color="primary" routerLink="/posts/create">
+    <app-glyph icon="plus"></app-glyph> Criar   
+  </app-button>  
   <table class="table table-striped">
     <thead>
       <tr>
@@ -16,7 +18,12 @@
         <td>{{post.title}}</td>
         <td>{{post.body}}</td>
         <td>
-          <a [routerLink]="['/posts', post.id, 'edit']">Edit</a>
+          <a [routerLink]="['/posts', post.id, 'edit']">
+            <app-glyph icon="pencil"></app-glyph> Edit
+          </a> |
+          <a [routerLink]="['/posts', post.id, 'edit']">
+            <app-glyph icon="trash"></app-glyph> Excluir
+          </a>
         </td>
       </tr>
     </tbody>
