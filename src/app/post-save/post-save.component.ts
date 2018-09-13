@@ -1,3 +1,4 @@
+import { MessageService } from './../services/message.service';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -18,7 +19,8 @@ export class PostSaveComponent implements OnInit {
   constructor(
     private postService: PostService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,10 @@ export class PostSaveComponent implements OnInit {
 
   save() {
     this.postService.save(this.post)
-      .subscribe(() => this.router.navigate(['/posts']));
+      .subscribe(() => { 
+        this.messageService.message = 'Post salvo com sucesso';
+        this.router.navigate(['/posts'])
+      });
   }
 
 }

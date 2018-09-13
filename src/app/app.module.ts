@@ -1,3 +1,4 @@
+import { MessageService } from './services/message.service';
 import { PostService } from './services/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { ButtonComponent } from './bootstrap/button/button.component';
 import { FormsModule } from '@angular/forms';
 import { GlyphComponent } from './bootstrap/glyph/glyph.component';
 import { ModalComponent } from './bootstrap/modal/modal.component';
+import { AlertComponent } from './bootstrap/alert/alert.component';
 
 
 
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
     ButtonComponent,
     GlyphComponent,
     ModalComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ const appRoutes: Routes = [
     FormsModule
 
   ],
-  providers: [PostService],
+  providers: [PostService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

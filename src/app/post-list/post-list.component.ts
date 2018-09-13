@@ -1,3 +1,4 @@
+import { MessageService } from './../services/message.service';
 import { ModalComponent } from './../bootstrap/modal/modal.component';
 import { PostService } from './../services/post.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -11,11 +12,14 @@ export class PostListComponent implements OnInit {
 
   posts: Array<any> = [];
   postToDelete = null;
+  message = null;
 
   @ViewChild(ModalComponent)
   modal: ModalComponent;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService,  private messageService: MessageService) { 
+    this.message = this.messageService.message;
+  }
 
   ngOnInit() {
     this.postService.query()

@@ -6,6 +6,11 @@
             Criar
         </app-button>
     </div>
+    <br /><br />
+    <div class="col-md-12" *ngIf="message">
+        <app-alert [close]="true" [timeout]="3000">{{message}}</app-alert>
+    </div>
+
     <table class="table table-striped">
         <thead>
         <tr>
