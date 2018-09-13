@@ -24,4 +24,8 @@ export class PostService {
       ? this.http.post(this.baseUrl, data)
       : this.http.put(`${this.baseUrl}/${data.id}`, data);
   }
+
+  destroy(id: number) { // status 204
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
 }
