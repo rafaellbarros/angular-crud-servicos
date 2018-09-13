@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: PostListComponent },
   { path: 'posts',  component: PostListComponent },
-  { path: 'posts/create',  component: PostSaveComponent }
-  
+  { path: 'posts/create',  component: PostSaveComponent },
+  { path: 'posts/:id/edit',  component: PostSaveComponent }
 ];
 
 @NgModule({

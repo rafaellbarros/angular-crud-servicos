@@ -15,7 +15,13 @@ export class PostService {
     return this.http.get(this.baseUrl);
   }
 
+  find(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
   save(data: any): Observable<any> {
-    return this.http.post(this.baseUrl, data);
+    return !data.id 
+      ? this.http.post(this.baseUrl, data)
+      : this.http.put(`${this.baseUrl}/${data.id}`, data);
   }
 }

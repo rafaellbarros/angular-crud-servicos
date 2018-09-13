@@ -1,6 +1,6 @@
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-save',
@@ -17,10 +17,17 @@ export class PostSaveComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      if (params.hasOwnProperty('id')) {
+        this.postService.find(+params['id'])
+          .subscribe(data => this.post = data);
+      }
+    });
   }
 
   save() {

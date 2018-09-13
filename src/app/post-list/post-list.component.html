@@ -15,7 +15,9 @@
         <td>{{post.id}}</td>
         <td>{{post.title}}</td>
         <td>{{post.body}}</td>
-        <td></td>
+        <td>
+          <a [routerLink]="['/posts', post.id, 'edit']">Edit</a>
+        </td>
       </tr>
     </tbody>
   </table>

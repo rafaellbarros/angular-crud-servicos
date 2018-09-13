@@ -1,5 +1,13 @@
 <div class="row">
-  <h3>Criar post</h3>
+  <h3>{{!post.id?'Criar post': 'Editar post'}}</h3>
+  <!--  
+  <h3 *ngIf="!post.id;else h3_edit">Criar post</h3>
+  <ng-template #h3_edit>
+    <h3>Editar post</h3>
+  </ng-template>
+  -->
+
+  
   <form class="form-horizontal" (submit)="save()">
     <div class="form-group">
       <label for="title" class="control-label">Title</label>
@@ -11,6 +19,8 @@
       <textarea type="text" class="form-control" id="body" name="body" [(ngModel)]="post.body"></textarea>
     </div>
 
-    <app-button type="submit" color="primary">Criar</app-button>
+    <app-button type="submit" color="primary">
+        {{!post.id?'Criar': 'Editar'}}
+    </app-button>
   </form>
 </div>
