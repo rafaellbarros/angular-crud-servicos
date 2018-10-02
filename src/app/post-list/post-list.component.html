@@ -1,10 +1,21 @@
 <div class="row">
     <h3>Listagem de posts</h3>
     <div class="col-md-12">
-        <app-button color="primary" routerLink="/posts/create">
-            <app-glyph icon="plus"></app-glyph>
-            Criar
-        </app-button>
+        <div class="row">
+            <div class="col-md-6">
+                    <app-button color="primary" routerLink="/posts/create">
+                        <app-glyph icon="plus"></app-glyph>
+                        Criar
+                    </app-button>
+            </div>
+            <div class="col-md-6">
+                    <app-button color="primary" routerLink="/posts/create-data-form">
+                        <app-glyph icon="plus"></app-glyph>
+                        Criar Data Form
+                    </app-button>
+            </div>        
+        </div>
+
     </div>
     <br /><br />
     <div class="col-md-12" *ngIf="message">
