@@ -34,9 +34,9 @@ export class PostSaveComponent implements OnInit {
 
   save() {
     this.postService.save(this.post)
-      .subscribe(() => { 
+      .subscribe(() => {
         this.messageService.message = 'Post salvo com sucesso';
-        this.router.navigate(['/posts'])
+        this.router.navigate(['/posts']);
       });
   }
 

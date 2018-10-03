@@ -20,7 +20,7 @@ export class PostService {
   }
 
   save(data: any): Observable<any> {
-    return !data.id 
+    return !data.id
       ? this.http.post(this.baseUrl, data)
       : this.http.put(`${this.baseUrl}/${data.id}`, data);
   }

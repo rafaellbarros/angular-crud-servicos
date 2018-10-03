@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit {
   @ViewChild(ModalComponent)
   modal: ModalComponent;
 
-  constructor(private postService: PostService,  private messageService: MessageService) { 
+  constructor(private postService: PostService,  private messageService: MessageService) {
     this.message = this.messageService.message;
   }
 

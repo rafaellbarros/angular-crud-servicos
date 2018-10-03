@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./glyph.component.css']
 })
 export class GlyphComponent implements OnInit {
-  
   @Input()
   icon;
 
