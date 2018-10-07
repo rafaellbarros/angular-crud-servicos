@@ -18,19 +18,19 @@ export class ChildComponent implements OnInit {
   dadosCandidato: any;
 
   @Input()
-  max: any;
+  max: Date;
 
   @Input()
-  min: any;
+  min: Date;
 
   @Input()
   anexoProcuracaoValido: boolean;
 
   @Input()
-  anexoIdentidadeProcuradorValido: any;
+  anexoIdentidadeProcuradorValido: boolean;
 
   @Input()
-  dataProcuracaoValido: boolean;
+  dataProcuracaoValido: booleanq;
 
   constructor() { }
 

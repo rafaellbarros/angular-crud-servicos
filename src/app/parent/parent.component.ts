@@ -1,6 +1,6 @@
 import { ChildComponent } from './child/child.component';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, EventEmitter, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 
@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements OnInit {
+export class ParentComponent implements OnInit, AfterViewInit {
 
   formAnexarDocumentos: FormGroup;
   formInitialize = false;
@@ -21,12 +21,17 @@ export class ParentComponent implements OnInit {
 
   anexoProcuracaoValid;
 
-  constructor() { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.validacaoDataProcuracacaoCentoOitentaDias();
     this.initForm();
   }
+
+  ngAfterViewInit(): void {
+    this.cdr.detectChanges();
+  }
+
 
   private initForm() {
     this.formAnexarDocumentos = new FormGroup({
