@@ -1,0 +1,50 @@
+<br />
+<div *ngIf="formProcuracao && formInitialize" class="panel panel-default">
+  <div class="panel-heading">Procuração</div>
+  <div class="panel-body">
+      <div class="row">
+          <div [formGroup]="formProcuracao">
+            <div class="col-md-12">
+
+                <div *ngIf="anexoProcuracaoValido" [className]="dataProcuracaoValido && anexoIdentidadeProcuradorValido ? '' : 'alert alert-danger'" role="alert">
+                  <div *ngIf="!dataProcuracaoValido">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    Favor preecher a data da procuração.
+                  </div>
+                  <div *ngIf="!anexoIdentidadeProcuradorValido">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    Favor anexar a identidade do procurador.
+                  </div>    
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="procuracao" class="control-label">Anexar Procuração</label>
+                        <input type="file" accept="application/pdf" class="form-control" id="procuracao" name="procuracao" formControlName="formAnexoProcuracao" >
+                      </div>
+                    </div> 
+                    
+      
+                <div class="col-md-2" *ngIf="anexoProcuracaoValido">
+                  <div class="form-group">
+                    <label for="dataProcuracao" class="control-label">Data Procuração</label>
+                    <input type="date" [max]="max" [min]="min" class="form-control" id="dataProcuracao" name="dataProcuracao" formControlName="dataProcuracao" >
+                  </div>
+                </div> 
+              
+                <div class="col-md-4" *ngIf="anexoProcuracaoValido">
+                  <div class="form-group">
+                    <label for="identidadeProcurador" class="control-label">Anexar Procuração</label>
+                    <input type="file" accept="application/pdf" class="form-control" id="identidadeProcurador" name="identidadeProcurador" formControlName="formAnexoIdentidadeProcurador" >
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+  </div>
+</div>
+  
+

@@ -1,0 +1,30 @@
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading">Anexar Documentos</div>
+    <div class="panel-body">
+
+      <div class="row">
+        <div [formGroup]="formAnexarDocumentos">
+
+          <div class="col-md-12">
+            <app-child
+              [anexoProcuracaoValido]="anexoProcuracaoValido()"
+              [dataProcuracaoValido]="dataProcuracaoValido()"
+              [anexoIdentidadeProcuradorValido]="anexoIdentidadeProcuradorValido()" 
+              (keypress)="validateDataProcuracao()" 
+              [max]="maxDataProcuracao  | date: 'yyyy-MM-dd'" 
+              [min]="minDataProcuracao | date: 'yyyy-MM-dd'" 
+              (readyFormEvent)="addFormControl('procuracao', $event)">
+            </app-child>
+          </div>  
+          <br />
+          <div class="col-md-2">
+            <button
+              [disabled]="!formValido()"
+              type="button" class="btn btn-primary" 
+              (click)="salvar()">Salvar</button>
+          </div>    
+        </div>
+      </div>
+    </div>
+</div>
