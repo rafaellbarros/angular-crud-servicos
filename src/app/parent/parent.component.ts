@@ -1,5 +1,3 @@
-import { ChildComponent } from './child/child.component';
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
@@ -31,7 +29,6 @@ export class ParentComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.cdr.detectChanges();
   }
-
 
   private initForm() {
     this.formAnexarDocumentos = new FormGroup({
@@ -126,7 +123,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
 
   public formValido() {
     let valido = false;
-    
+
     if (this.anexoProcuracaoValido() && this.dataProcuracaoValido() && this.anexoIdentidadeProcuradorValido()) {
       valido = true;
     }
