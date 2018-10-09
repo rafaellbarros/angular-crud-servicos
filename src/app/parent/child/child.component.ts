@@ -30,7 +30,7 @@ export class ChildComponent implements OnInit {
   anexoIdentidadeProcuradorValido: boolean;
 
   @Input()
-  dataProcuracaoValido: booleanq;
+  dataProcuracaoValido: boolean;
 
   constructor() { }
 

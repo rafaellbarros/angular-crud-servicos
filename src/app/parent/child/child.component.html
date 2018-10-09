@@ -30,7 +30,7 @@
                 <div class="col-md-2" *ngIf="anexoProcuracaoValido">
                   <div class="form-group">
                     <label for="dataProcuracao" class="control-label">Data Procuração</label>
-                    <input type="date" [max]="max" [min]="min" class="form-control" id="dataProcuracao" name="dataProcuracao" formControlName="dataProcuracao" >
+                    <input type="date" [max]="max" [min]="min" class="form-control" id="dataProcuracao" name="dataProcuracao" formControlName="dataProcuracao" [required]="anexoProcuracaoValido">
                   </div>
                 </div> 
               
