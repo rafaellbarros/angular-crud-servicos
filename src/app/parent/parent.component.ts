@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 
@@ -7,7 +7,7 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements OnInit, AfterViewInit {
+export class ParentComponent implements OnInit, AfterViewChecked {
 
   formAnexarDocumentos: FormGroup;
   formInitialize = false;
@@ -26,7 +26,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
     this.initForm();
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewChecked(): void {
     this.cdr.detectChanges();
   }
 
